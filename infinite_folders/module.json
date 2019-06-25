@@ -1,0 +1,13 @@
+{
+    "name": "infinite_folders",
+    "title": "Infinite Folders",
+    "description": "Allows infinite recursion depth in folders instead of a maximum depth of 2 folders. Also allows multi-level folders for the Journal",
+    "version": "0.1",
+    "author": "KaKaRoTo",
+    "scripts": ["./infinite_folders.js"],
+    "styles": [],
+    "packs": [],
+    "url": "https://github.com/kakaroto/fvtt-module-infinite-folders",
+    "manifest": "https://raw.githubusercontent.com/kakaroto/fvtt-module-infinite-folders/master/infinite_folders/module.json",
+    "download": "https://github.com/kakaroto/fvtt-module-infinite-folders/raw/master/infinite_folders.zip"
+}

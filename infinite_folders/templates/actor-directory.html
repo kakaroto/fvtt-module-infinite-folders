@@ -1,0 +1,51 @@
+{{#*inline "folder"}}
+<li class="folder flexcol {{#unless f.expanded}}collapsed{{/unless}}" data-folder-id="{{f._id}}">
+  <header class="folder-header flexrow">
+    <h3><i class="fas fa-folder-open"></i>{{f.name}}</h3>
+    {{#if user.isGM}}
+	<a class="create-entity" data-folder="{{f._id}}"><i class="fas fa-user"></i></a>
+	<a class="create-folder" data-parent-folder="{{f._id}}"><i class="fas fa-plus"></i></a>
+	{{/if}}
+  </header>
+  <ol class="subdirectory">
+	<!-- Child Folders -->
+	{{#each f.children as |c ci|}}
+        {{> folder f=c user=../user}}
+	{{/each}}
+	
+    <!-- Folder Actors -->
+    {{#each f.content}}
+	    {{> actor}}
+    {{/each}}
+  </ol>
+</li>
+{{/inline}}
+
+{{#*inline "actor"}}
+<li class="actor directory-item flexrow" data-entity-id="{{this._id}}">
+  <img class="profile actor-profile" src="{{this.img}}" title="{{this.name}}"/>
+  <h4 class="entity-name"><a>{{this.name}}</a></h4>
+</li>
+{{/inline}}
+
+<section class="sidebar-tab tab flexcolumn" id="actors" data-tab="actors">
+	<ol class="directory-list">
+	    <!-- Directories -->
+	    {{#each folders as |f fi|}}
+		    {{> folder f=f user=../user}}
+	    {{/each}}
+
+	    <!-- Unassigned Actors -->
+	    {{#each unassigned}}
+  		    {{> actor}}
+	    {{/each}}
+	</ol>
+
+	<!-- Directory Footer -->
+	{{#if user.isGM}}
+	<footer class="directory-footer">
+		<button class="create-entity"><i class="fas fa-user"></i> Create Actor</button>
+		<button class="create-folder"><i class="fas fa-folder"></i> Create Folder</button>
+	</footer>
+	{{/if}}
+</section>
