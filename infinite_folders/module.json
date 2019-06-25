@@ -1,7 +1,7 @@
 {
     "name": "infinite_folders",
     "title": "Infinite Folders",
-    "description": "Allows infinite recursion depth in folders instead of a maximum depth of 2 folders. Also allows multi-level folders for the Journal",
+    "description": "Allows infinite recursion depth in folders instead of a maximum depth of 2 folders. Also allows unassigned and multi-level folders for the Journal. *WARNING*: Any folder more than 2 levels deep and all of its contents may become lost if this module becomes permanently unusable in a future FVTT update, please read the README file for the full DISCLAIMER.",
     "version": "0.1",
     "author": "KaKaRoTo",
     "scripts": ["./infinite_folders.js"],
